@@ -17,6 +17,14 @@ struct Location {
 // "go + direction": move to the area in that direction
 // "use + item (+ object)": maybe remove the item, invoke a (targeted?) effect
 
+// one option: just match the enum value, parse the rest and act based on a match
+enum Action {
+    Look,
+    Take,
+    Go,
+    Use,
+}
+
 fn main() {
     let item1 = Item("Little key");
     let item2 = Item("Big key");
