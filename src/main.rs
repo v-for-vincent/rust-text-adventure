@@ -1,7 +1,6 @@
 struct Item(&'static str);
 
 struct Location {
-    // literal string as this is static
     description: &'static str,
     items: Vec<Item>,
 }
