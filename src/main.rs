@@ -5,6 +5,18 @@ struct Location {
     items: Vec<Item>,
 }
 
+// how to do actions?
+// as an enum? sounds reasonable.
+// what properties do they have?
+// a keyword which is typed in
+// one or more arguments, possibly a variable number
+// something which happens when they are invoked
+
+// "look": print the area description
+// "take + item": move the item to the player's inventory
+// "go + direction": move to the area in that direction
+// "use + item (+ object)": maybe remove the item, invoke a (targeted?) effect
+
 fn main() {
     let item1 = Item("Little key");
     let item2 = Item("Big key");
