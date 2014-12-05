@@ -1,9 +1,9 @@
-struct Item(str);
+struct Item(&'static str);
 
 struct Location {
     // literal string as this is static
-    description: Box<str>,
-    items: Vec<Box<Item>>,
+    description: &'static str,
+    items: Vec<Item>,
 }
 
 fn main() {
