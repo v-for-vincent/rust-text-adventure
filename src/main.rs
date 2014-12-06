@@ -1,3 +1,5 @@
+use std::io;
+
 struct Item(&'static str);
 
 struct Location {
@@ -30,6 +32,7 @@ fn parse(command: String) {
         Some("take") => println!("You take something."),
         Some("go") => println!("You go somewhere."),
         Some("use") => println!("You use something."),
+        Some("quit") => println!("Need CTRL-D for now."),
         _ => println!("Unknown command!"),
     }
     // look should just check for arity 0 invoke an associated function
@@ -43,4 +46,10 @@ fn main() {
     let item2 = Item("Big key");
     let hall = Location{ description: "A wide open space. Streams of lava flow on both sides of the entry gate.",
                          items: vec![item1, item2] };
+    loop {
+        let input = io::stdin().read_line()
+                               .ok()
+                               .expect("Failed to read line");
+        parse(input);
+    }
 }
