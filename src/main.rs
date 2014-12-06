@@ -23,14 +23,15 @@ struct Location {
 // do not want to go adding these at runtime if it can be avoided
 
 fn parse(command: String) {
-    let tokens = command.split(' ');
-    match tokens[0] {
-        "look" => println!("You look around."),
-        "take" => println!("You take something."),
-        "go" => println!("You go somewhere."),
-        "use" => println!("You use something."),
-        _ => println!("Unknown command!"),
-    }
+    let mut tokens = command.split(' ');
+    let verb = tokens.nth(0);
+    //   match tokens[0] {
+    //       "look" => println!("You look around."),
+    //       "take" => println!("You take something."),
+    //       "go" => println!("You go somewhere."),
+    //       "use" => println!("You use something."),
+    //       _ => println!("Unknown command!"),
+    //   }
     // look should just check for arity 0 invoke an associated function
     // take should parse rest of the command, see if there is an item with a name equal to the rest of the command
     // go should parse exactly one more token and go in that direction... how?
