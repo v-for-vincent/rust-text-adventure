@@ -25,13 +25,13 @@ struct Location {
 fn parse(command: String) {
     let mut tokens = command.split(' ');
     let verb = tokens.nth(0);
-    //   match tokens[0] {
-    //       "look" => println!("You look around."),
-    //       "take" => println!("You take something."),
-    //       "go" => println!("You go somewhere."),
-    //       "use" => println!("You use something."),
-    //       _ => println!("Unknown command!"),
-    //   }
+    match verb {
+        Some("look") => println!("You look around."),
+        Some("take") => println!("You take something."),
+        Some("go") => println!("You go somewhere."),
+        Some("use") => println!("You use something."),
+        _ => println!("Unknown command!"),
+    }
     // look should just check for arity 0 invoke an associated function
     // take should parse rest of the command, see if there is an item with a name equal to the rest of the command
     // go should parse exactly one more token and go in that direction... how?
